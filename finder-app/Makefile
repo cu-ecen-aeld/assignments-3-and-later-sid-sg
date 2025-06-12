@@ -1,2 +1,11 @@
-writer: writer.c
-	aarch64-none-linux-gnu-gcc writer.c -o writer
+CC = aarch64-none-linux-gnu-gcc
+TARGET = writer
+SRC = writer.c 
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CC) $(SRC) -o $(TARGET)
+
+clean: 
+	rm -f $(TARGET)
